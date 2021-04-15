@@ -1,0 +1,100 @@
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class="pull-left">
+                    <div class="page-title">Dashboard</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Data</header>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chart" width="750" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header>Graph Settings</header>
+                    </div>
+                    <div class="card-body">
+
+                        <p>Display Graph As:</p>
+                        <div>
+                            <input type="radio" id="line" name="display" value="line" checked>
+                            <label for="line">Line</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="bar" name="display" value="bar">
+                            <label for="bar">Bar</label>
+                        </div>
+
+                        <hr>
+
+                        <p>Sort Data By:</p>
+
+                        <div>
+                            <input type="radio" id="day" name="sort" value="day" checked>
+                            <label for="day">Day</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="week" name="sort" value="week">
+                            <label for="week">Week</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="year" name="sort" value="year">
+                            <label for="year">Year</label>
+                        </div>
+
+                        <hr>
+
+                        <label for="data-select">Choose data to display:</label>
+
+                        <div>
+                            <input type="checkbox" id="Sub_Sample_No" name="Sub_Sample_No" checked>
+                            <label for="Sub_Sample_No">Sub_Sample_No</label>
+                            <input type="checkbox" id="Gas_Sample_No" name="Gas_Sample_No" checked>
+                            <label for="Gas_Sample_No">Sub_Sample_No</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-box d-flex">
+                        <div class="card-head text-center">
+                            <header><label for="csv">Upload CSV File:</label></header>
+                        </div>
+                        <div class="card-body text-center">
+                            <form action="http://localhost:3000/submit" method="post">
+                                <input type="file" name="file" id="csv" />
+                                <input type="submit" id="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card card-box d-flex">
+                        <div class="card-head text-center">
+                            <header>Email This Data</header>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="mdl-button btn-primary">Email Data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->

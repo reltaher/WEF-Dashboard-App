@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <label for="csv">Upload CSV File:</label>
+
+    <form action="http://localhost:3000/submit" method="post">
+        <input type="file" name="file" id="csv" />
+        <input type="submit" id="submit" value="Submit">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="/javascripts/chart.js"></script>
+</body>
+
+</html>

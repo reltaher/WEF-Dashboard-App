@@ -1,0 +1,125 @@
+<% layout('layouts/boilerplate') %>
+<div class="page-bar">
+    <div class="page-title-breadcrumb">
+        <div class="pull-left">
+            <div class="page-title">Dashboard</div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Data</header>
+            </div>
+            <div class="card-body">
+                <canvas id="myChart" width="750" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Graph Settings</header>
+            </div>
+            <div class="card-body">
+
+                <p>Display Graph As:</p>
+                <select name="chartType" id="chartType">
+                    <option value="line">Line</option>
+                    <option value="bar">Bar</option>
+                </select>
+
+                <hr class="style-one">
+
+                <p>Choose a Date Range to Display:</p>
+
+                <div>
+                    <input type="text" id="litepicker" />
+                </div>
+
+                <hr class="style-one">
+
+                <label for="data-select">Choose data to display:</label>
+                <div class="col-sm-9">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_Sample_No" name="Gas Sample No.">
+                        <label class="form-check-label" for="Gas_Sample_No">Gas Sample No.</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="CPU_Time" name="CPU Time">
+                        <label class="form-check-label" for="CPU_Time">CPU Time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Fluid_Temp" name="Fluid Temp (C)">
+                        <label class="form-check-label" for="Fluid_Temp">Fluid Temp (C)</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Fluid_pH" name="Fluid pH">
+                        <label class="form-check-label" for="Fluid_pH">Fluid pH</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_Temp" name="Gas Temp (C)"
+                            value="Gas_Temp">
+                        <label class="form-check-label" for="Gas_Temp">Gas Temp (C)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_RH" name="Gas RH%">
+                        <label class="form-check-label" for="Gas_RH">Gas RH%</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_Pressure" name="Gas Pressure (hPa)">
+                        <label class="form-check-label" for="Gas_Pressure">Gas Pressure (hPa)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_MQ4" name="Gas MQ4 (Volts/5.0)">
+                        <label class="form-check-label" for="Gas_MQ4">Gas MQ4 (Volts/5.0)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="Gas_MQ135" name="Gas MQ135 (Volts/5.0)">
+                        <label class="form-check-label" for="Gas_MQ135">Gas MQ135 (Volts/5.0)</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card card-box d-flex">
+            <div class="card-head text-center">
+                <header><label for="csv">Upload CSV File:</label></header>
+            </div>
+            <div class="card-body text-center">
+                <form action="http://localhost:3000/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="files" id="csv" multiple />
+                    <input type="submit" id="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card card-box d-flex">
+            <div class="card-head text-center">
+                <header>Email This Data</header>
+            </div>
+            <div class="card-body text-center">
+                <a class="mdl-button btn-primary" href="mailTo:">Email Data</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+
+<script src="/javascripts/setup.js"></script>
+
+<script src="/javascripts/chart.js"></script>
+
+<script src="/javascripts/litepicker.js"></script>
