@@ -134,7 +134,7 @@ app.get('/data', async (req, res) => {
 })
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
-    res.render('homedashboard'); 
+    res.render('homedashboard')
 })
 
 app.post('/dashboard', isLoggedIn, upload.array('files'), async (req, res) => {
